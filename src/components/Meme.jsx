@@ -3,12 +3,23 @@ import memes from '/src/memesData.js';
 import './css/Meme.css';
 
 export default function Meme() {
-  const [memeImage, setMemeImage] = useState('');
+  const [meme, setMeme] = useState({
+    topText: '',
+    bottomText: '',
+    image: '',
+  });
+
+  const [allMemesData, setAllMemesData] = useState(memes);
 
   const getMemeImage = () => {
-    const memesList = memes.data.memes;
+    const memesList = allMemesData.data.memes;
     const randNum = Math.floor(Math.random() * memesList.length);
-    setMemeImage(memesList[randNum].url);
+    const url = memesList[randNum].url;
+
+    setMeme((prevState) => ({
+      ...prevState,
+      image: url,
+    }));
   };
 
   return (
@@ -39,7 +50,7 @@ export default function Meme() {
       </div>
 
       <div className='meme-img'>
-        <img src={memeImage} className='meme-img__inner' />
+        <img src={meme.image} className='meme-img__inner' />
       </div>
     </div>
   );
