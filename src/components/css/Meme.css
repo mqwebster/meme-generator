@@ -3,24 +3,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: start;
+  gap: 28px;
 
   width: 100%;
 }
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
   gap: 28px;
 
   width: 60%;
-}
+} */
 
 .meme-form__inputs {
   display: flex;
   flex-direction: row;
   gap: 28px;
 
-  width: 100%;
+  width: 60%;
 }
 
 .meme-form__input {
@@ -37,7 +38,7 @@ form {
 .meme-form__submit {
   display: flex;
 
-  width: 100%;
+  width: 60%;
   height: 60px;
 }
 
@@ -57,4 +58,17 @@ form {
   border-radius: 8px;
 
   background: linear-gradient(90deg, #672280, #a626d3);
+}
+
+.meme-img {
+  display: flex;
+  overflow: hidden;
+
+  width: 60%;
+
+  border-radius: 8px;
+}
+
+.meme-img__inner {
+  width: 100%;
 }
