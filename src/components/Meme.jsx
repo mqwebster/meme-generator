@@ -49,9 +49,11 @@ export default function Meme() {
         />
       </div>
 
-      <div className='meme-img'>
-        <img src={meme.image} className='meme-img__inner' />
-      </div>
+      {meme.image && (
+        <div className='meme-img'>
+          <img src={meme.image} alt='Meme' className='meme-img__inner' />
+        </div>
+      )}
     </div>
   );
 }
